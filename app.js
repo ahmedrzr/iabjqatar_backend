@@ -61,8 +61,7 @@ mongoose().then(init).catch(err => {
 });
 
 function init() {
-
-    // USER API //
+     // USER API //
     require('./app/routes/user/users')(app, upload);
     //GROUP API
     require('./app/routes/admin/groups')(app);

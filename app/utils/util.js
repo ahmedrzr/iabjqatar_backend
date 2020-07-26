@@ -50,7 +50,10 @@ module.exports.deleteFile = function (path) {
     return new Promise((resolve, reject) => {
         fs.unlink(path, (err) => {
             if (err) {
-                reject(err);
+                if (err.code === 'ENOENT')
+                    resolve();
+                else
+                    reject(err);
             }
             resolve();
         })

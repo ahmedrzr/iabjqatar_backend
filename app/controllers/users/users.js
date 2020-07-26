@@ -550,8 +550,6 @@ function updateUser(id, preImagePath, updateData, request_data, response_data) {
                     done(null, id, update);
                 }
             }, (id, update, done) => {
-                console.log(' ID ' + JSON.stringify(id));
-                console.log('UPDATE :-) ' + JSON.stringify(update));
                 User.updateUser({_id: id}, update)
                     .then(result => {
                         done(null, result);
